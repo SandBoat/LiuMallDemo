@@ -1,32 +1,25 @@
 <view class="container">
-  <view class="wrap">
-    <image 
-      class="avatar"
-      src="{{userInfo.avatarUrl}}"
-    />
+  <view wx:if="{{isLogin}}" class="wrap">
+    <image class="avatar" src="{{userInfo.avatarUrl}}" />
     <view class="info">
       <text class="name">{{userInfo.nickName}}</text>
       <text class="msg">已绑定学号</text>
     </view>
-    <zan-icon
-      class="publish"
-      type="{{'add'}}"
-      bindtap='goToPublish'
-    />
+    <zan-icon class="publish" type="{{'add'}}" bindtap='goToPublish' />
+  </view>
+  <view wx:else class="wrap">
+    <button 
+      class="login"
+      type="default" 
+      open-type="getUserInfo" 
+      bindgetuserinfo="getUserInfo"
+    >
+      登录
+    </button>
   </view>
 
   <zan-panel class="cell-panel">
-    <zan-cell
-      title="购物车"
-      is-link
-      url=""
-      bindtap=""
-    />
-    <zan-cell
-      title="在售商品"
-      is-link
-      url=""
-      bindtap=""
-    />
+    <zan-cell title="购物车" is-link url="" bindtap="" />
+    <zan-cell title="在售商品" is-link url="" bindtap="" />
   </zan-panel>
 </view>

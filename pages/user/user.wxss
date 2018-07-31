@@ -63,3 +63,13 @@ page {
   margin-top: 15px;
   width: 100%;
 }
+
+button.login {
+  background-color: #fab614;
+  color: #fff;
+}
+
+button.button-hover.login {
+  background-color: #fab614;
+  color: #fff;
+}
